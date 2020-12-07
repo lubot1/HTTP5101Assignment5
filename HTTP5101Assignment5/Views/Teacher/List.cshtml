@@ -1,0 +1,13 @@
+﻿@model IEnumerable<HTTP5101Assignment5.Models.Teacher>
+@{
+    ViewBag.Title = "List";
+}
+
+<nav>
+    <a class="btn btn-success" href="/Teacher/Add">Add a teacher</a>
+</nav>
+<h2>List</h2>
+@foreach(var teacher in Model)
+{
+    <div><a href="/Teacher/Show/@teacher.Teacherid">@teacher.TeacherFname @teacher.TeacherLname</a></div>
+}

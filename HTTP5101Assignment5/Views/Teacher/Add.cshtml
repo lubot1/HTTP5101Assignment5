@@ -1,0 +1,26 @@
+﻿@model HTTP5101Assignment5.Models.Teacher
+
+@{
+    ViewBag.Title = "Add";
+}
+
+<nav>
+    <a href="/Teacher/List" class="navbar-link">Go back to listing</a>
+</nav>
+
+<h2>Add a teacher</h2>
+
+<form method="POST" action="/Teacher/Create" style="display:flex;flex-direction:column;" name="AddTeacherForm">
+    <label for="TeacherFname">Teacher first name: </label>
+    <input type="text" id="TeacherFname" name="TeacherFname" required />
+    <label for="TeacherLname">Teacher last name: </label>
+    <input type="text" id="TeacherLname" name="TeacherLname" required/>
+    <label for="EmployeeNumber">Employee number: </label>
+    <input type="text" id="EmployeeNumber" name="EmployeeNumber" required/>
+    <label for="Salary">Salary: </label>
+    <input type="text" id="Salary" name="Salary" required/>
+    <input type="submit" id="SubmitBtn" />
+</form>
+
+<script src="~/Scripts/jquery-3.4.1.min.js" type="text/javascript"></script>
+<script src="~/Scripts/FormValidation.js" type="text/javascript"></script>
