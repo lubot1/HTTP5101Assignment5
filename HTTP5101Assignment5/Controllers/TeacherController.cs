@@ -57,5 +57,15 @@ namespace HTTP5101Assignment5.Controllers
 
             return RedirectToAction("List");
         }
+        // GET : /Teacher/Update/{id}
+        public ActionResult Update(int id)
+        {
+            TeacherDataController controller = new TeacherDataController();
+            ViewBag.Teacher = controller.FindTeacher(id);
+            //Might be used in the future to allow for editing classes
+            //ClassDataController ClassController = new ClassDataController(); 
+            //ViewBag.Class = ClassController.FindTeacherClass(id);
+            return View();
+        }
     }
 }
