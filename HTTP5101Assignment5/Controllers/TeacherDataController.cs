@@ -157,14 +157,13 @@ namespace HTTP5101Assignment5.Controllers
             //Creates a new MySql command object
             MySqlCommand cmd = Conn.CreateCommand();
             //Query uses MySql CURRENT_DATE() method to generate hire date
-            cmd.CommandText = "UPDATE `teachers` SET teacherfname=@TeacherFname,teacherlname=@TeacherLname,employeenumber=@EmployeeNumber,salary=@Salary,hiredate=@HireDate WHERE teacherid=@Teacherid";
+            cmd.CommandText = "UPDATE `teachers` SET teacherfname=@TeacherFname,teacherlname=@TeacherLname,employeenumber=@EmployeeNumber,salary=@Salary WHERE teacherid=@Teacherid";
             //Adds value of id to query safely
             cmd.Parameters.AddWithValue("@Teacherid", NewTeacher.Teacherid);
             cmd.Parameters.AddWithValue("@TeacherFname", NewTeacher.TeacherFname);
             cmd.Parameters.AddWithValue("@TeacherLname", NewTeacher.TeacherLname);
             cmd.Parameters.AddWithValue("@EmployeeNumber", NewTeacher.EmployeeNumber);
             cmd.Parameters.AddWithValue("@Salary", NewTeacher.Salary);
-            cmd.Parameters.AddWithValue("@HireDate", NewTeacher.HireDate);
 
             cmd.Prepare();
             cmd.ExecuteNonQuery();

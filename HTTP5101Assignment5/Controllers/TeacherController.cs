@@ -62,10 +62,25 @@ namespace HTTP5101Assignment5.Controllers
         {
             TeacherDataController controller = new TeacherDataController();
             ViewBag.Teacher = controller.FindTeacher(id);
-            //Might be used in the future to allow for editing classes
+            //Might be used in the future to allow for editing classes associated with teachers
             //ClassDataController ClassController = new ClassDataController(); 
             //ViewBag.Class = ClassController.FindTeacherClass(id);
             return View();
+        }
+        // POST : /Teacher/Edit
+        public ActionResult Edit(int id, String TeacherFname, String TeacherLname, String EmployeeNumber, decimal Salary)
+        {
+            Teacher EditTeacher = new Teacher();
+            EditTeacher.Teacherid = id;
+            EditTeacher.TeacherFname = TeacherFname;
+            EditTeacher.TeacherLname = TeacherLname;
+            EditTeacher.EmployeeNumber = EmployeeNumber;
+            EditTeacher.Salary = Salary;
+
+            TeacherDataController controller = new TeacherDataController();
+            controller.EditTeacher(EditTeacher);
+
+            return RedirectToAction("Show/"+id);
         }
     }
 }

@@ -5,12 +5,12 @@
 }
 
 <nav>
-    <a href="/Teacher/List" class="navbar-link">Go back to listing</a>
+    <a href="/Teacher/Show/@ViewBag.Teacher.Teacherid" class="navbar-link">Back</a>
 </nav>
 
-<h2>Update</h2>
-<p>@ViewBag.Teacher.Teacherid</p>
-<form method="POST" action="/Teacher/Update/@ViewBag.Teacher.Teacherid" style="display:flex;flex-direction:column;" name="AddTeacherForm">
+<h2>Update @ViewBag.Teacher.TeacherFname @ViewBag.Teacher.TeacherLname</h2>
+
+<form method="POST" action="/Teacher/Edit/@ViewBag.Teacher.Teacherid" style="display:flex;flex-direction:column;" name="TeacherForm">
     <label for="TeacherFname">Teacher first name: </label>
     <input type="text" id="TeacherFname" name="TeacherFname" value="@ViewBag.Teacher.TeacherFname" required />
     <label for="TeacherLname">Teacher last name: </label>
