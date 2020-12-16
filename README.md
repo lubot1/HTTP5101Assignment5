@@ -18,3 +18,7 @@ the deletion of the teacher.
 This project uses the Model View Controller architecture to create a dynamic webpage that is connected to a mySql database. This separates different responsibilities to different 
 files in this repository. The model files creates classes which allow us to _model_ the type of data that will passed between functions, Views are the dynamically rendered html pages
 that display the data within the server, and the controllers _control_ the url routing around our website, along with the functions we use to interface with the mySql database.
+## References
+Update functionality designed while referencing Christine Bittle's Learning C# for Web Development part 16 [https://youtu.be/o1ax8rvlFMQ].
+
+Materials were referenced on December 16th 2020. I used this video to determine how to add in update functionality to my application. I built upon my previous assignment to add this functionality.
